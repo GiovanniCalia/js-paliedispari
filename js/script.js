@@ -20,10 +20,11 @@ if (parola == parolaInvertita){
 } else {
     word(`No, "${nome}" non è una parola palindroma.`)
 }
-/*
+*/
 
 
 /* PARI E DISPARI */
+
 
 let randomNumber = generateRandomBetween(1, 5);
 
@@ -38,21 +39,21 @@ function isEven(testNumber) {
 
 let risultato = document.getElementById("stampa");
 let pariDispari = parseInt(prompt("Scelga pari o dispari, in un numero compreso da 1 a 5"));
-//let randomNumber = Math.floor(Math.random() *  (5 - 1 + 1)) + 1;
 let somma = pariDispari + randomNumber;
 
 if ( pariDispari < 1 || pariDispari > 5){
     isEven("Spiacente, il numero non è compreso tra 1 e 5");
-} else if (pariDispari % 2 == 0){
-    isEven("Il numero è pari");
-} else if (pariDispari % 2 == 1) {
-    isEven("Il numero è dispari");
+} else if (somma % 2 == 0 && pariDispari % 2 == 0){
+    isEven(`Hai scelto un numero pari, il computer ha generato il numero ${randomNumber}, il risultato è: ${somma}, hai vinto!`);
+} else if (somma % 2 == 1 && pariDispari % 2 == 1) {
+    isEven(`Hai scelto un numero dispari, il computer ha generato il numero ${randomNumber}, il risultato è ${somma}, hai vinto!`);
+} else if (somma % 2== 1 && pariDispari % 2 == 0){
+    isEven(`Hai scelto un numero pari, il computer ha generato il numero ${randomNumber}, il risultato è: ${somma}, hai perso!`);
+} else if (somma % 2 == 0 && pariDispari % 2 == 1){
+    isEven(`Hai scelto un numero dispari, il computer ha generato il numero ${randomNumber}, il risultato è: ${somma}, hai perso!`);
 } else{
     isEven("Inserisca un numero");
 }
-
-console.log(randomNumber)
-console.log(somma)
 
 
 
